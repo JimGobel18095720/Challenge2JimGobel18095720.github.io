@@ -97,19 +97,6 @@ body {
 /* Laptops, 1050px breakpoint */
 @media only screen and (min-width: 1050px) {
 
-  	#clock-container h2 {
-  		visibility: visible;
-  		padding-bottom: 50px;
-		position: relative;
-		color: #fff;
-		text-align: center;
-		margin: 10px 0;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.4em;
-		font-size: 1.2em;
-	}
-
 	#clock-container #tijd div {
 		float: left;
 		-webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
