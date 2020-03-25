@@ -3,8 +3,13 @@
 <head>
 	<title>Clock</title>
 	<link rel="stylesheet" href="stylesheetClock.css"/>
+	<meta name="viewport" contnet="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<div id="container-projects">
+   		<h1 id="alert"></h1>
+		<div class="overlay"></div>
+	</div>
 	<div id="clock-container">
 		<h2 id="tekst">The time on earth is now</h2>
 		<div id="tijd">
@@ -37,27 +42,32 @@
 		var today = new Date();
 
 		function dag(){
+
 			
 			var ochtend = document.getElementById('tekst');
 			var hours = document.getElementById('hour');
 			var h = today.getHours();
 
-			if (0 <= h&&h <= 5) {
-				document.querySelector("h2").textContent = 'It is night on earth, time to sleep!';
+			if (h >= 0 && h <= 5) {
+				document.querySelector("h2").textContent = 'It is night on earth!';
 				document.querySelector("body").style.backgroundColor = "#060a1f";
+				document.getElementById("alert").innerHTML = 'Time to sleep!';
+				document.getElementById("container-projects").style.display = "flex";
 			}
 			
-			if (6 <= h&&h <= 11) {
-				document.querySelector("h2").textContent = 'It is morning on earth, time to wake up!';
+			else if (h >= 6 && h <= 11) {
+				document.querySelector("h2").textContent = 'It is morning on earth!';
 				document.querySelector("body").style.backgroundColor = "#ffd458";
+				document.getElementById("alert").innerHTML = 'Time to wake up!';
+				document.getElementById("container-projects").style.display = "flex";
 			}
 
-			if (12 <= h&&h <= 17) {
+			else if (h >= 12 && h <= 17) {
 				document.querySelector("h2").textContent = 'It is afternoon on earth!';
-				document.querySelector("body").style.backgroundColor = "#87ceeb";
+				document.querySelector("body").style.backgroundColor = "#87ceeb";	
 			}
 
-			if (18 <= h&&h <= 23) {
+			else if (h >= 18 && h <= 23) {
 				document.querySelector("h2").textContent = 'It is evening on earth!';
 				document.querySelector("body").style.backgroundColor = "#fac467";
 			}
