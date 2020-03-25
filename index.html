@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<link rel="stylesheet" href="stylesheetClock.css"/>
+</head>
+<body>
+	<div id="clock-container">
+		<h2 id="tekst">The time on earth is now</h2>
+		<div id="tijd">
+			<div><span id="hour">00</span><span>HOURS</span></div>
+			<div><span id="minutes">00</span><span>MINUTES</span></div>
+			<div><span id="seconds">00</span><span>SECONDS</span></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function clock(){
+			var hours = document.getElementById('hour');
+			var minutes = document.getElementById('minutes');
+			var seconds = document.getElementById('seconds');
+
+			var h = new Date().getHours();
+			var m = new Date().getMinutes();
+			var s = new Date().getSeconds();
+
+			hours.innerHTML = h;
+			minutes.innerHTML = m;
+			seconds.innerHTML = s;
+
+		}
+		
+		var interval = setInterval(clock, 1000);
+
+	</script>
+	<script type="text/javascript">
+		
+		var today = new Date();
+
+		function dag(){
+			
+			var ochtend = document.getElementById('tekst');
+			var hours = document.getElementById('hour');
+			var h = today.getHours();
+
+			if (0 <= h&&h <= 5) {
+				document.querySelector("h2").textContent = 'It is night on earth, time to sleep!';
+				document.querySelector("body").style.backgroundColor = "#060a1f";
+			}
+			
+			if (6 <= h&&h <= 11) {
+				document.querySelector("h2").textContent = 'It is morning on earth, time to wake up!';
+				document.querySelector("body").style.backgroundColor = "#ffd458";
+			}
+
+			if (12 <= h&&h <= 17) {
+				document.querySelector("h2").textContent = 'It is afternoon on earth!';
+				document.querySelector("body").style.backgroundColor = "#87ceeb";
+			}
+
+			if (18 <= h&&h <= 23) {
+				document.querySelector("h2").textContent = 'It is evening on earth!';
+				document.querySelector("body").style.backgroundColor = "fac467";
+			}
+
+		}
+		
+		var interval = setInterval(dag, 1000);
+
+	</script>
+</body>
+</html>

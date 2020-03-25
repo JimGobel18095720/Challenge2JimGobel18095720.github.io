@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #060a1f;
+}
+
+#clock-container {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#clock-container h2 {
+  	padding-bottom: 50px;
+	position: relative;
+	color: #fff;
+	text-align: center;
+	margin: 10px 0;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.4em;
+	font-size: 1.2em;
+}
+
+#clock-container #tijd div {
+	position: relative;
+	margin: 0 5px;
+}
+
+#clock-container #tijd div span {
+	position: relative;
+	width: 220px;
+	height: 200px;
+	background: #3700B3;
+	color: #fff;
+	font-weight: 300;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4em;
+	z-index: 10;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+}
+
+#clock-container #tijd div span:nth-child(2) {
+	height: 50px;
+	width: 220px;
+	font-size: 1em;
+	letter-spacing: 0.2em;
+	font-weight: 500;
+	z-index: 9;
+	box-shadow: none;
+	background: #080808;
+	text-transform: uppercase;
+}
+
+#clock-container #tijd div:last-child span {
+	background: #03DAC6;
+}
+
+#clock-container #tijd div:last-child span:nth-child(2) {
+	background: #080808;
+}
+
+/* Tablets, 750px breakpoint */
+@media only screen and (min-width: 750px) {
+	
+	#clock-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	#clock-container #tijd div span {
+		height: 200px;
+		width: 200px;
+	}
+
+	#clock-container #tijd div span:nth-child(2) {
+		width: 200px;
+		font-size: 1em;
+	}
+
+}  
+/* Laptops, 1050px breakpoint */
+@media only screen and (min-width: 1050px) {
+
+  	#clock-container h2 {
+  		visibility: visible;
+  		padding-bottom: 50px;
+		position: relative;
+		color: #fff;
+		text-align: center;
+		margin: 10px 0;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.4em;
+		font-size: 1.2em;
+	}
+
+	#clock-container #tijd div {
+		float: left;
+		-webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+	}
+
+	#clock-container #tijd div span {
+		width: 200px;
+		height: 120px;
+	}
+
+}
+/* Desktops, 1485px breakpoint */
+@media only screen and (min-width: 1485px) {
+
+	#clock-container h2 {
+		font-size: 1.4em;
+		padding-bottom: 20px;
+	}
+
+	#clock-container #tijd div {
+		-webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+		float: left;
+	}
+
+	#clock-container #tijd div span {
+		position: relative;
+		width: 240px;
+		height: 180px;
+		font-size: 5em;
+	}
+
+	#clock-container #tijd div span:nth-child(2) {
+		width: 240px;
+		font-size: 1em;
+	}
+}
